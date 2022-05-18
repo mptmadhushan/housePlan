@@ -57,33 +57,102 @@ export default function Home({ navigation }) {
       <TouchableOpacity
         style={styles.buttonStyle}
         activeOpacity={0.5}
-        onPress={() => navigation.navigate('Register')}>
-        <Text style={styles.buttonTextStyle}>Submit your detail</Text>
+        onPress={() => navigation.navigate('Home')}>
+        <Text style={styles.buttonTextStyle}>Next</Text>
       </TouchableOpacity>
     </View>
   );
   return (
     <View style={styles.container}>
       <View style={styles.centerFlex}>
-        <Text style={styles.buttonTextStyleReg}>Build your dream house</Text>
+        <Text style={styles.buttonTextStyleReg}>Contact Details</Text>
       </View>
       <View style={styles.centerFlex}>
         <View style={styles.rowFlex}>
-          <TextInput
-            style={[styles.inputStyle]}
-            // onChangeText={UserPassword => setUserPassword(UserPassword)}
-            placeholder="Perches" //12345
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
+          <Text style={styles.TextStyleRg}>Engineer Details</Text>
+          <SelectDropdown
+            data={dropData}
+            defaultButtonText="Select"
+            onSelect={(selectedItem, index) => {
+              console.log(selectedItem, index);
+            }}
+            buttonTextAfterSelection={(selectedItem, index) => {
+              // text represented after item is selected
+              // if data array is an array of objects then return selectedItem.property to render after item is selected
+              return selectedItem;
+            }}
+            rowTextForSelection={(item, index) => {
+              // text represented for each item in dropdown
+              // if data array is an array of objects then return item.property to represent item in dropdown
+              return item;
+            }}
           />
+        </View>
+        <View style={styles.rowFlex}>
+          <Text style={styles.TextStyleRg}>Architecture Details</Text>
+          <SelectDropdown
+            data={dropData}
+            defaultButtonText="Select"
+            onSelect={(selectedItem, index) => {
+              console.log(selectedItem, index);
+            }}
+            buttonTextAfterSelection={(selectedItem, index) => {
+              // text represented after item is selected
+              // if data array is an array of objects then return selectedItem.property to render after item is selected
+              return selectedItem;
+            }}
+            rowTextForSelection={(item, index) => {
+              // text represented for each item in dropdown
+              // if data array is an array of objects then return item.property to represent item in dropdown
+              return item;
+            }}
+          />
+        </View>
+        <View style={styles.rowFlex}>
+          <Text style={styles.TextStyleRg}>Construction Details</Text>
+          <SelectDropdown
+            data={dropData}
+            defaultButtonText="Select"
+            onSelect={(selectedItem, index) => {
+              console.log(selectedItem, index);
+            }}
+            buttonTextAfterSelection={(selectedItem, index) => {
+              // text represented after item is selected
+              // if data array is an array of objects then return selectedItem.property to render after item is selected
+              return selectedItem;
+            }}
+            rowTextForSelection={(item, index) => {
+              // text represented for each item in dropdown
+              // if data array is an array of objects then return item.property to represent item in dropdown
+              return item;
+            }}
+          />
+        </View>
+        <View style={styles.rowFlex}>
+          <Text style={styles.TextStyleRg}>Carpenter Details</Text>
+          <SelectDropdown
+            data={dropData}
+            defaultButtonText="Select"
+            onSelect={(selectedItem, index) => {
+              console.log(selectedItem, index);
+            }}
+            buttonTextAfterSelection={(selectedItem, index) => {
+              // text represented after item is selected
+              // if data array is an array of objects then return selectedItem.property to render after item is selected
+              return selectedItem;
+            }}
+            rowTextForSelection={(item, index) => {
+              // text represented for each item in dropdown
+              // if data array is an array of objects then return item.property to represent item in dropdown
+              return item;
+            }}
+          />
+        </View>
+        <View style={styles.rowFlex}>
+          <Text style={styles.TextStyleRg}>Hardware Details</Text>
           <TextInput
             style={[styles.inputStyle]}
             // onChangeText={UserPassword => setUserPassword(UserPassword)}
-            placeholder="Hectors" //12345
             placeholderTextColor={COLORS.third}
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
@@ -92,173 +161,8 @@ export default function Home({ navigation }) {
             returnKeyType="next"
           />
         </View>
-        <View style={styles.rowFlex}>
-          <TextInput
-            style={[styles.inputStyle]}
-            // onChangeText={UserPassword => setUserPassword(UserPassword)}
-            placeholder="Length" //12345
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
-          />
-          <TextInput
-            style={[styles.inputStyle]}
-            // onChangeText={UserPassword => setUserPassword(UserPassword)}
-            placeholder="Width" //12345
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
-          />
-        </View>
-        <View style={styles.rowFlex}>
-          <TextInput
-            style={[styles.inputStyle]}
-            // onChangeText={UserPassword => setUserPassword(UserPassword)}
-            placeholder="Area" //12345
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
-          />
-          <TextInput
-            style={[styles.inputStyle]}
-            // onChangeText={UserPassword => setUserPassword(UserPassword)}
-            placeholder="Room Count" //12345
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
-          />
-        </View>
-        <View style={styles.rowFlex}>
-          <TextInput
-            style={[styles.inputStyle]}
-            // onChangeText={UserPassword => setUserPassword(UserPassword)}
-            placeholder="Washroom Count" //12345
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
-          />
-          <TextInput
-            style={[styles.inputStyle]}
-            // onChangeText={UserPassword => setUserPassword(UserPassword)}
-            placeholder="Floors Count" //12345
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
-          />
-        </View>
-        <View style={styles.rowFlex}>
-          <CheckBox title="Garage" checked={false} />
 
-          <CheckBox title="Click Here" checked={false} />
-        </View>
-        <View style={styles.rowFlex}>
-          <SelectDropdown
-            data={dropData}
-            onSelect={(selectedItem, index) => {
-              console.log(selectedItem, index);
-            }}
-            defaultButtonText="Roof Type"
-            buttonTextAfterSelection={(selectedItem, index) => {
-              // text represented after item is selected
-              // if data array is an array of objects then return selectedItem.property to render after item is selected
-              return selectedItem;
-            }}
-            rowTextForSelection={(item, index) => {
-              // text represented for each item in dropdown
-              // if data array is an array of objects then return item.property to represent item in dropdown
-              return item;
-            }}
-          />
-          <SelectDropdown
-            data={dropData}
-            defaultButtonText="Stone Type"
-            onSelect={(selectedItem, index) => {
-              console.log(selectedItem, index);
-            }}
-            buttonTextAfterSelection={(selectedItem, index) => {
-              // text represented after item is selected
-              // if data array is an array of objects then return selectedItem.property to render after item is selected
-              return selectedItem;
-            }}
-            rowTextForSelection={(item, index) => {
-              // text represented for each item in dropdown
-              // if data array is an array of objects then return item.property to represent item in dropdown
-              return item;
-            }}
-          />
-        </View>
-        <View style={styles.rowFlex}>
-          <SelectDropdown
-            style={styles.inputStyle}
-            data={dropData}
-            onSelect={(selectedItem, index) => {
-              console.log(selectedItem, index);
-            }}
-            defaultButtonText="Floor Type"
-            buttonTextAfterSelection={(selectedItem, index) => {
-              // text represented after item is selected
-              // if data array is an array of objects then return selectedItem.property to render after item is selected
-              return selectedItem;
-            }}
-            rowTextForSelection={(item, index) => {
-              // text represented for each item in dropdown
-              // if data array is an array of objects then return item.property to represent item in dropdown
-              return item;
-            }}
-          />
-          <SelectDropdown
-            style={{ width: SIZES.width * 0.3 }}
-            data={dropData}
-            defaultButtonText="Ceiling Type"
-            onSelect={(selectedItem, index) => {
-              console.log(selectedItem, index);
-            }}
-            buttonTextAfterSelection={(selectedItem, index) => {
-              // text represented after item is selected
-              // if data array is an array of objects then return selectedItem.property to render after item is selected
-              return selectedItem;
-            }}
-            rowTextForSelection={(item, index) => {
-              // text represented for each item in dropdown
-              // if data array is an array of objects then return item.property to represent item in dropdown
-              return item;
-            }}
-          />
-        </View>
         {ButtonSub}
-        <View style={styles.rowFlex}>
-          <Image
-            source={{ uri: 'https://picsum.photos/200/300' }}
-            style={{
-              width: SIZES.width * 0.4,
-              height: SIZES.width * 0.46,
-            }}
-          />
-          <Text style={styles.TextStyleRg}>
-            Qui exercitation excepteur ex nulla pariatur deserunt amet excepteur
-            tempor enim deserunt labore minim eiusmod. Qui exercitation
-            excepteur ex nulla pariatur deserunt amet excepteur tempor enim
-            deserunt labore minim eiusmod.
-          </Text>
-        </View>
       </View>
     </View>
   );

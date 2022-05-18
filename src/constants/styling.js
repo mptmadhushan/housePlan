@@ -9,15 +9,21 @@ const styles = StyleSheet.create({
   descriptionBgFull: {},
   emptyCartContainer: {
     justifyContent: 'center',
-    alignItems: 'center',
-    alignContent: 'center',
-    flex: 1,
+    alignItems: 'flex-start',
+    alignContent: 'flex-start',
+    width: SIZES.width * 0.3,
+  },
+  emptyCartContainerMsg: {
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    alignContent: 'flex-start',
   },
   emptyCartMessage: {
     color: COLORS.third,
-    fontSize: 15,
+    fontSize: 18,
     textAlign: 'center',
-    marginTop: -SIZES.height * 0.1,
+    margin: 10,
+    // marginTop: -SIZES.height * 0.1,
   },
   centerFlex: {
     justifyContent: 'center',
@@ -41,9 +47,15 @@ const styles = StyleSheet.create({
   },
   rowFlex2: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-around',
     alignItems: 'center',
     alignContent: 'center',
+  },
+  rowFlex21: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    // alignItems: 'center',
+    // alignContent: 'center',
   },
   rowFlex22: {
     flexDirection: 'row',
@@ -72,7 +84,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: COLORS.black,
-    fontSize: 15,
+    fontSize: 18,
     width: SIZES.width * 0.5,
     textAlign: 'center',
     fontWeight: 'bold',

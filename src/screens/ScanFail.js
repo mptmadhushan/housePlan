@@ -4,7 +4,7 @@ import { View, TouchableOpacity, Image, StyleSheet, Text } from 'react-native';
 import ShoppingCartIcon from '../components/ShoppingCartIcon';
 
 import { icons, SIZES, COLORS } from '../constants';
-export default function ScanResult({ navigation }) {
+export default function RowMaterial({ navigation }) {
   const header = (
     <View style={styles.rowFlex1}>
       <TouchableOpacity onPress={() => navigation.navigate('Home')}>

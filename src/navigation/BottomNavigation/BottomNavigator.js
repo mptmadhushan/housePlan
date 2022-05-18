@@ -13,6 +13,7 @@ import Home from '../../screens/Home';
 import ItemsScreen from '../../screens/MyBag';
 import Profile from '../../screens/Profile';
 import Location from '../../screens/Location';
+import Estimate from '../../screens/Estimate';
 
 import { COLORS, icons } from '../../constants';
 import { ScreenNames } from '../MainNavigator';
@@ -71,7 +72,7 @@ const Tabs = () => {
                   {cartItems.length}
                 </Text>
               </View>
-              <TabBarIcon focused={focused} iconSource={icons.cart} />
+              <TabBarIcon focused={focused} iconSource={icons.help} />
             </View>
           ),
           tabBarButton: props => <TabBarCustomButton {...props} />,
@@ -82,7 +83,17 @@ const Tabs = () => {
         component={Location}
         options={{
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} iconSource={icons.location} />
+            <TabBarIcon focused={focused} iconSource={icons.help} />
+          ),
+          tabBarButton: props => <TabBarCustomButton {...props} />,
+        }}
+      />
+      <Screen
+        name={ScreenNames.Estimate}
+        component={Estimate}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} iconSource={icons.help} />
           ),
           tabBarButton: props => <TabBarCustomButton {...props} />,
         }}

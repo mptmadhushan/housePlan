@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Toast from 'react-native-simple-toast';
 
 import DoneModal from '../components/DoneModal';
-import NoItemsMessage from '../components/NoItemsMessage';
+import ItemDetais from '../components/detailsMsg';
 import Item from '../components/Item';
 
 import { removeItemFromCart as removeItemFromCartActionCreator } from '../redux/cartItemsSlice';
@@ -65,45 +65,35 @@ function MyBag({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.rowFlex1}>
-        <Text style={styles.headerText}>My Bag</Text>
+        <Text style={styles.headerText}>Build your dream house Details</Text>
       </View>
-      {cartItems.length > 0 ? (
-        <FlatList
-          data={cartItems}
-          keyExtractor={(item, index) => index}
-          renderItem={({ item, index }) => (
-            <Item
-              key={index}
-              item={item}
-              navigation={navigation}
-              removeItemFromCart={removeItemFromCart}
-              isCart={true}
-              token={userAuth}
-            />
-          )}
-        />
-      ) : (
-        <NoItemsMessage />
-      )}
-      {cartItems.length > 0 && (
-        <View
-          style={{
-            position: 'absolute',
-            bottom: 9,
-            width: SIZES.width,
-            height: SIZES.height * 0.22,
-            backgroundColor: '#fafafa',
-            opacity: 0.9,
-          }}>
-          <View style={styles.centerFlex}>
-            <View style={styles.rowFlex2}>
-              <Text style={styles.headerText2}>Subtotal</Text>
-              <Text style={styles.headerText2}>$ {getSum(cartItems)}</Text>
-            </View>
-            <DoneModal onPress={checkOut} doneModal={modalVisible} />
-          </View>
+      <View style={styles.rowFlex21}>
+        <View style={{ marginLeft: 20 }}>
+          <ItemDetais msg={'Perches : 10'} />
+          <ItemDetais msg={'Hectors : 10'} />
+          <ItemDetais msg={'Length : 10'} />
+          <ItemDetais msg={'Width : 10'} />
+          <ItemDetais msg={'Area : 10'} />
         </View>
-      )}
+        <View style={{ marginLeft: 20 }}>
+          <ItemDetais msg={'Room Count : 10'} />
+          <ItemDetais msg={'Washroom Count : 10'} />
+          <ItemDetais msg={'Washroom Count : 10'} />
+          <ItemDetais msg={'Floors Count : 10'} />
+        </View>
+      </View>
+
+      <View style={styles.rowFlex1}>
+        <Text style={styles.headerText}>Finishing Details</Text>
+      </View>
+      <View style={{ marginLeft: 20 }}>
+        <ItemDetais msg={'Ceiling Type : Hip Roof'} />
+        <ItemDetais msg={'Stone Type :  Hip Roof'} />
+        {/* </View>
+      <View style={styles.rowFlex2}> */}
+        <ItemDetais msg={'Roof Type :  Hip Roof'} />
+        <ItemDetais msg={'Finishing Roof Type :  Hip Roof'} />
+      </View>
     </View>
   );
 }

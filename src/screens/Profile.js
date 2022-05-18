@@ -41,20 +41,7 @@ export default function Profile({ navigation }) {
           />
           <Text style={styles.textStyle}>My Details</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.btnAcc}
-          onPress={() => navigation.navigate('MyItems')}>
-          <Image
-            source={icons.cart}
-            resizeMode="contain"
-            style={{
-              width: 30,
-              height: 30,
-              marginRight: 20,
-            }}
-          />
-          <Text style={styles.textStyle}>My Items</Text>
-        </TouchableOpacity>
+
         <TouchableOpacity style={styles.btnAcc}>
           <Image
             source={icons.setting}

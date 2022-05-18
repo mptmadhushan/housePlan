@@ -6,7 +6,7 @@ import styles from '../constants/styling';
 // const DEFAULT_NO_ITEMS_MESSAGE = 'Sorry ! \nThere are no items here';
 
 const NoItemsMessage = ({ msg }) => (
-  <View style={styles.emptyCartContainer}>
+  <View style={styles.emptyCartContainerMsg}>
     <Text style={styles.emptyCartMessage}>{msg}</Text>
   </View>
 );

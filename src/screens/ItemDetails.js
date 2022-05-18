@@ -33,7 +33,7 @@ import BASE_URL from '../shared/configs';
 //   dateCode: '3121',
 // };
 
-export default function ScanResult({ route, navigation }) {
+export default function RowMaterial({ route, navigation }) {
   const userAuthToken = useSelector(state => state.auth.token);
   const data = route.params.item;
 

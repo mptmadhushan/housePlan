@@ -38,11 +38,11 @@ const initialData = {
   dateCode: '3121',
 };
 
-export default function ScanResult({ navigation, route }) {
+export default function RowMaterial({ navigation, route }) {
   const dispatch = useDispatch();
   const userAuthToken = useSelector(state => state.auth.token);
 
-  const [scanResult, setScanResult] = useState(initialData);
+  const [RowMaterial, setRowMaterial] = useState(initialData);
   const [items, setItems] = React.useState([
     { name: 'TURQUOISE', code: '#1abc9c' },
     { name: 'EMERALD', code: '#2ecc71' },
@@ -69,7 +69,7 @@ export default function ScanResult({ navigation, route }) {
     const showToast = message => {
       Toast.showWithGravity(message, Toast.SHORT, Toast.TOP);
     };
-    setScanResult({
+    setRowMaterial({
       name: 'item3',
       price: 340,
       image: 'https://picsum.photos/200/300',
@@ -91,19 +91,7 @@ export default function ScanResult({ navigation, route }) {
   ];
   const header = (
     <View style={styles.rowFlexScanResHed}>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-        <Image
-          source={icons.close}
-          resizeMode="contain"
-          style={{
-            tintColor: COLORS.primary,
-            width: 25,
-            height: 25,
-          }}
-        />
-      </TouchableOpacity>
-      <Text style={styles.headerText}>Find Path</Text>
-      <ShoppingCartIcon />
+      <Text style={styles.headerText}>3D House</Text>
     </View>
   );
 
@@ -112,7 +100,7 @@ export default function ScanResult({ navigation, route }) {
       <ScrollView>
         {header}
         <View style={styles.centerFlex}>
-          {scanResult.image && (
+          {RowMaterial.image && (
             <View
               style={{
                 marginLeft: 10,
@@ -126,7 +114,7 @@ export default function ScanResult({ navigation, route }) {
                 }}
                 resizeMode="cover"
                 style={{
-                  height: SIZES.width * 0.5,
+                  height: SIZES.height * 0.5,
                   width: SIZES.width * 0.8,
                   marginLeft: SIZES.width * 0.05,
                   marginRight: SIZES.width * 0.05,
@@ -137,26 +125,21 @@ export default function ScanResult({ navigation, route }) {
         </View>
         <View style={styles.rowFlexScanRes}>
           <Text style={styles.itemTextStyle}>
-            Directions: 3rd Rack , First deck
+            Ea quis deserunt incididunt sit tempor q uis. Ea quis deserunt
+            incididunt sit tempor q uis.
           </Text>
         </View>
-        <Text style={styles.desTitle}>Details</Text>
-        <Description text={scanResult.desc} />
-        <View>
-          <FlatGrid
-            itemDimension={50}
-            data={items}
-            style={styles.gridView}
-            // staticDimension={300}
-            fixed
-            spacing={10}
-            renderItem={({ item }) => (
-              <View
-                style={[styles.itemContainer, { backgroundColor: item.code }]}>
-                <Text style={styles.itemCode}>{item.code}</Text>
-              </View>
-            )}
-          />
+
+        <View style={styles.centerFlex}>
+          <TouchableOpacity style={styles.buttonStyle} activeOpacity={0.5}>
+            <Text style={styles.buttonTextStyle}>View Contacts</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            activeOpacity={0.5}
+            onPress={() => navigation.navigate('RowMaterial')}>
+            <Text style={styles.buttonTextStyle}>View Row Material</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>

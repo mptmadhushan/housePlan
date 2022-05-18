@@ -14,7 +14,6 @@ import {
 } from 'react-native';
 import { useDispatch } from 'react-redux';
 import Toast from 'react-native-simple-toast';
-
 import { COLORS, icons, images, SIZES } from '../constants';
 import { setClientToken } from '../shared/axios';
 import { login } from '../api/authAPI';
@@ -68,7 +67,7 @@ const LoginScreen = ({ navigation }) => {
 
   const onPressLogin = () => {
     dispatch(authSuccess('data.token'));
-    navigation.navigate('OnBoarding');
+    navigation.navigate('Home');
     // const payload = {
     //   username: userEmail,
     //   password: userPassword,
@@ -105,11 +104,13 @@ const LoginScreen = ({ navigation }) => {
       />
       <View style={styles.SectionStyle}>
         <TextInput
+          editable={false}
           style={[styles.inputStyle]}
           onChangeText={UserEmail => setUserEmail(UserEmail)}
-          placeholder="Username"
+          placeholder="Test user"
           placeholderTextColor={COLORS.third}
           autoCapitalize="none"
+          disabled
           keyboardType="email-address"
           returnKeyType="next"
           onSubmitEditing={() =>
@@ -124,7 +125,7 @@ const LoginScreen = ({ navigation }) => {
   const password = (
     <View style={styles.rowFlex}>
       <Image
-        source={icons.lock}
+        source={icons.mic}
         resizeMode="contain"
         style={{
           width: 20,
@@ -133,9 +134,10 @@ const LoginScreen = ({ navigation }) => {
       />
       <View style={styles.SectionStyle}>
         <TextInput
+          editable={false}
           style={[styles.inputStyle]}
           onChangeText={UserPassword => setUserPassword(UserPassword)}
-          placeholder="Password" //12345
+          placeholder="Tap to Record" //12345
           placeholderTextColor={COLORS.third}
           keyboardType="default"
           ref={passwordInputRef}
@@ -154,7 +156,7 @@ const LoginScreen = ({ navigation }) => {
         style={styles.buttonStyle}
         activeOpacity={0.5}
         onPress={() => onPressLogin()}>
-        <Text style={styles.buttonTextStyle}>Login</Text>
+        <Text style={styles.buttonTextStyle}>Next</Text>
       </TouchableOpacity>
     </View>
   );
@@ -193,13 +195,21 @@ const LoginScreen = ({ navigation }) => {
                 transform: [{ scale: animationLogoScale }],
               }}>
               <Image
-                source={images.silicaLogo}
-                resizeMode="contain"
+                source={{ uri: 'https://picsum.photos/200/300' }}
                 style={{
-                  width: SIZES.width * 0.56,
+                  width: SIZES.width * 0.9,
                   height: SIZES.width * 0.46,
                 }}
               />
+              <Text
+                style={{
+                  color: COLORS.thrid,
+                  fontSize: 10,
+                  marginLeft: 30,
+                  marginTop: 10,
+                }}>
+                Ex amet sint eu do consectetur incididunt exercitation officia.
+              </Text>
             </Animated.View>
           </Animated.View>
           <Animated.View
@@ -208,8 +218,21 @@ const LoginScreen = ({ navigation }) => {
             }}>
             {userName}
             {password}
+            <TextInput
+              style={{
+                color: COLORS.thrid,
+                fontSize: 10,
+                marginLeft: 30,
+                marginTop: 10,
+              }}
+              multiline={true}
+              numberOfLines={4}
+              value={
+                'Est commodo cupidatat officia ipsum veniam minim non voluptat eEst commodo cupidatat officia ipsum veniam minim non voluptate.'
+              }
+            />
+
             {logInButton}
-            {regButton}
           </Animated.View>
         </KeyboardAvoidingView>
       </ScrollView>

@@ -15,6 +15,7 @@ export const dry = require('../assets/icons/dry-100.png');
 export const iron = require('../assets/icons/iron-100.png');
 export const paint = require('../assets/icons/no-paint-100.png');
 export const location = require('../assets/icons/location.png');
+export const mic = require('../assets/icons/mic.png');
 
 export default {
   lock,
@@ -34,4 +35,5 @@ export default {
   homeTab,
   ic_round,
   setting,
+  mic,
 };

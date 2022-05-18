@@ -9,13 +9,13 @@ function ShoppingCartIcon(props) {
   const cartItems = useSelector(state => state);
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('ItemsScreen')}
+      // onPress={() => navigation.navigate('ItemsScreen')}
       style={styles.button}>
       <View style={styles.itemCountContainer}>
         <Text style={styles.itemCountText}>{cartItems.length}</Text>
       </View>
       <Image
-        source={icons.cart}
+        source={icons.user}
         resizeMode="contain"
         style={{
           width: 30,
