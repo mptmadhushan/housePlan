@@ -45,7 +45,7 @@ export default function MainStackNavigator() {
 
   return (
     <Navigator
-      initialRouteName={'OnBoarding'}
+      initialRouteName={'Login'}
       screenOptions={{
         headerShown: false,
       }}>

@@ -106,12 +106,7 @@ export default function RowMaterial({ navigation, route }) {
                 marginLeft: 10,
               }}>
               <Image
-                source={{
-                  uri: 'https://picsum.photos/200/300',
-                  headers: {
-                    Authorization: `Bearer ${userAuthToken}`,
-                  },
-                }}
+                source={icons.user}
                 resizeMode="cover"
                 style={{
                   height: SIZES.height * 0.5,
