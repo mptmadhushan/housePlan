@@ -14,7 +14,6 @@ import {
 } from 'react-native';
 import { useDispatch } from 'react-redux';
 import Toast from 'react-native-simple-toast';
-
 import { COLORS, icons, images, SIZES } from '../constants';
 import { setClientToken } from '../shared/axios';
 import { login } from '../api/authAPI';
@@ -163,7 +162,7 @@ const LoginScreen = ({ navigation }) => {
       <TouchableOpacity
         // style={styles.buttonStyle}
         activeOpacity={0.5}
-        onPress={() => navigation.navigate('Register')}>
+        onPress={() => navigation.navigate('OnBoarding')}>
         <Text style={styles.buttonTextStyleReg}>
           Don't have account? register here
         </Text>
@@ -193,7 +192,7 @@ const LoginScreen = ({ navigation }) => {
                 transform: [{ scale: animationLogoScale }],
               }}>
               <Image
-                source={images.silicaLogo}
+                source={images.logo}
                 resizeMode="contain"
                 style={{
                   width: SIZES.width * 0.56,

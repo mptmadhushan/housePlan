@@ -12,7 +12,7 @@ import { SIZES } from '../constants';
 import styles from '../constants/styling';
 import { checkout } from '../api/checkoutAPI';
 
-function MyBag({ navigation }) {
+function HomeDetails({ navigation }) {
   const dispatch = useDispatch();
   const cartItems = useSelector(state => state.cartItems.value);
   const userAuth = useSelector(state => state.auth.token);
@@ -98,4 +98,4 @@ function MyBag({ navigation }) {
   );
 }
 
-export default MyBag;
+export default HomeDetails;

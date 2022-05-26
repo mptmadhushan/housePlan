@@ -195,7 +195,7 @@ const LoginScreen = ({ navigation }) => {
                 transform: [{ scale: animationLogoScale }],
               }}>
               <Image
-                source={{ uri: 'https://picsum.photos/200/300' }}
+                source={images.logo}
                 style={{
                   width: SIZES.width * 0.9,
                   height: SIZES.width * 0.46,

@@ -15,11 +15,15 @@ const styles = StyleSheet.create({
   },
   emptyCartContainerMsg: {
     justifyContent: 'center',
+    // borderColor: COLORS.primary,
+    // borderWidth: 1,
+    // borderRadius: 40,
+    // width: SIZES.width * 0.3,
     alignItems: 'flex-start',
     alignContent: 'flex-start',
   },
   emptyCartMessage: {
-    color: COLORS.third,
+    color: COLORS.white,
     fontSize: 18,
     textAlign: 'center',
     margin: 10,
@@ -73,7 +77,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.primary,
   },
   rowFlex1: {
     height: 120,
@@ -83,11 +87,12 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   headerText: {
-    color: COLORS.black,
-    fontSize: 18,
-    width: SIZES.width * 0.5,
+    color: COLORS.secondary,
+    fontSize: 22,
+    width: SIZES.width * 0.8,
     textAlign: 'center',
     fontWeight: 'bold',
+    padding: 10,
   },
   headerText2: {
     color: '#000000',

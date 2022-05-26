@@ -13,8 +13,8 @@ import {
 import AsyncStorage from '@react-native-community/async-storage';
 import Toast from 'react-native-simple-toast';
 import { useSelector } from 'react-redux';
-import { CheckBox } from 'react-native-elements';
-
+// import { CheckBox } from 'react-native-elements';
+import CheckBox from '@react-native-community/checkbox';
 import Button from '../components/Button';
 
 import { images, SIZES, COLORS } from '../constants';
@@ -63,32 +63,42 @@ export default function Home({ navigation }) {
     </View>
   );
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.centerFlex}>
         <Text style={styles.buttonTextStyleReg}>Build your dream house</Text>
       </View>
       <View style={styles.centerFlex}>
         <View style={styles.rowFlex}>
+          <Image
+            source={images.cover}
+            style={{
+              marginTop: 30,
+              borderRadius: 20,
+              marginBottom: 20,
+              width: SIZES.width * 0.8,
+              height: SIZES.width * 0.36,
+            }}
+          />
+        </View>
+        <View style={styles.rowFlex}>
           <TextInput
             style={[styles.inputStyle]}
             // onChangeText={UserPassword => setUserPassword(UserPassword)}
             placeholder="Perches" //12345
-            placeholderTextColor={COLORS.third}
+            placeholderTextColor={COLORS.white}
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
           <TextInput
             style={[styles.inputStyle]}
             // onChangeText={UserPassword => setUserPassword(UserPassword)}
             placeholder="Hectors" //12345
-            placeholderTextColor={COLORS.third}
+            placeholderTextColor={COLORS.white}
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
         </View>
@@ -97,7 +107,7 @@ export default function Home({ navigation }) {
             style={[styles.inputStyle]}
             // onChangeText={UserPassword => setUserPassword(UserPassword)}
             placeholder="Length" //12345
-            placeholderTextColor={COLORS.third}
+            placeholderTextColor={COLORS.white}
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
@@ -121,7 +131,7 @@ export default function Home({ navigation }) {
             style={[styles.inputStyle]}
             // onChangeText={UserPassword => setUserPassword(UserPassword)}
             placeholder="Area" //12345
-            placeholderTextColor={COLORS.third}
+            placeholderTextColor={COLORS.white}
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
@@ -132,7 +142,7 @@ export default function Home({ navigation }) {
             style={[styles.inputStyle]}
             // onChangeText={UserPassword => setUserPassword(UserPassword)}
             placeholder="Room Count" //12345
-            placeholderTextColor={COLORS.third}
+            placeholderTextColor={COLORS.white}
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
@@ -145,7 +155,7 @@ export default function Home({ navigation }) {
             style={[styles.inputStyle]}
             // onChangeText={UserPassword => setUserPassword(UserPassword)}
             placeholder="Washroom Count" //12345
-            placeholderTextColor={COLORS.third}
+            placeholderTextColor={COLORS.white}
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
@@ -156,7 +166,7 @@ export default function Home({ navigation }) {
             style={[styles.inputStyle]}
             // onChangeText={UserPassword => setUserPassword(UserPassword)}
             placeholder="Floors Count" //12345
-            placeholderTextColor={COLORS.third}
+            placeholderTextColor={COLORS.white}
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
@@ -165,12 +175,25 @@ export default function Home({ navigation }) {
           />
         </View>
         <View style={styles.rowFlex}>
-          <CheckBox title="Garage" checked={false} />
-
-          <CheckBox title="Click Here" checked={false} />
+          {/* <CheckBox title="Garage" checked={false} /> */}
+          <TouchableOpacity style={{ flexDirection: 'row' }}>
+            <CheckBox
+              value={false}
+              tintColors={{ true: COLORS.secondary, false: 'white' }}
+            />
+            <Text style={{ color: '#fff', fontSize: 18 }}>Garage</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={{ flexDirection: 'row' }}>
+            <CheckBox
+              value={false}
+              tintColors={{ true: COLORS.secondary, false: 'white' }}
+            />
+            <Text style={{ color: '#fff', fontSize: 18 }}>Lable</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.rowFlex}>
           <SelectDropdown
+            style={{ color: '#f4a' }}
             data={dropData}
             onSelect={(selectedItem, index) => {
               console.log(selectedItem, index);
@@ -244,23 +267,8 @@ export default function Home({ navigation }) {
           />
         </View>
         {ButtonSub}
-        <View style={styles.rowFlex}>
-          <Image
-            source={{ uri: 'https://picsum.photos/200/300' }}
-            style={{
-              width: SIZES.width * 0.4,
-              height: SIZES.width * 0.46,
-            }}
-          />
-          <Text style={styles.TextStyleRg}>
-            Qui exercitation excepteur ex nulla pariatur deserunt amet excepteur
-            tempor enim deserunt labore minim eiusmod. Qui exercitation
-            excepteur ex nulla pariatur deserunt amet excepteur tempor enim
-            deserunt labore minim eiusmod.
-          </Text>
-        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({
@@ -301,18 +309,17 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: COLORS.primary,
   },
   buttonTextStyleReg: {
-    color: COLORS.third,
+    color: COLORS.secondary,
     fontSize: 20,
-    paddingVertical: 7,
+    paddingVertical: 10,
     fontWeight: 'bold',
   },
   buttonTextStyle: {
     color: COLORS.white,
     fontSize: 20,
-    paddingVertical: 7,
     fontWeight: 'bold',
   },
   TextStyleRg: {
@@ -329,6 +336,7 @@ const styles = StyleSheet.create({
     height: 50,
     width: 230,
     alignItems: 'center',
+    justifyContent: 'center',
     borderRadius: 30,
     marginLeft: 35,
     marginRight: 35,
@@ -339,10 +347,10 @@ const styles = StyleSheet.create({
   inputStyle: {
     flex: 1,
     width: SIZES.width * 0.3,
-    color: COLORS.third,
+    color: COLORS.white,
     paddingLeft: 15,
     paddingRight: 15,
-    borderColor: COLORS.darkgray,
+    borderColor: COLORS.white,
     borderWidth: 1,
     borderRadius: 30,
     marginHorizontal: 20,

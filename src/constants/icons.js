@@ -12,23 +12,23 @@ export const logOut = require('../assets/icons/ic_round-logout.png');
 export const wash = require('../assets/icons/washing-machine-100.png');
 export const doNot = require('../assets/icons/do-not-touch-100.png');
 export const dry = require('../assets/icons/dry-100.png');
-export const iron = require('../assets/icons/iron-100.png');
-export const paint = require('../assets/icons/no-paint-100.png');
-export const location = require('../assets/icons/location.png');
+export const task = require('../assets/icons/icons8-task-50.png');
+export const house = require('../assets/icons/icons8-3d-house-50.png');
+export const estimate = require('../assets/icons/icons8-estimate-50.png');
 export const mic = require('../assets/icons/mic.png');
 
 export default {
   lock,
   user,
-  location,
+  estimate,
   close,
   done,
   logOut,
   help,
   doNot,
-  paint,
+  house,
   wash,
-  iron,
+  task,
   dry,
   deleteIcon,
   cart,

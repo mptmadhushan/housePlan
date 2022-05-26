@@ -19,7 +19,7 @@ import Description from '../components/Description';
 import Discount from '../components/Discount';
 
 import { addItemToCart as addItemToCartActionCreator } from '../redux/cartItemsSlice';
-import { COLORS, icons, SIZES } from '../constants';
+import { COLORS, icons, images, SIZES } from '../constants';
 import styles from '../constants/styling';
 
 const initialData = {
@@ -106,7 +106,7 @@ export default function RowMaterial({ navigation, route }) {
                 marginLeft: 10,
               }}>
               <Image
-                source={icons.user}
+                source={images.house}
                 resizeMode="cover"
                 style={{
                   height: SIZES.height * 0.5,

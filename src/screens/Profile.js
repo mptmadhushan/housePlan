@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { icons, SIZES } from '../constants';
+import { icons, SIZES, COLORS } from '../constants';
 import { authLogout } from '../redux/authSlice';
 import { clearUserToken } from '../shared/asyncStorage';
 import { ScreenNames } from '../navigation/MainNavigator';
@@ -32,6 +32,8 @@ export default function Profile({ navigation }) {
           onPress={() => navigation.navigate('MyDetails')}>
           <Image
             source={icons.user}
+            tintColor={COLORS.white}
+
             resizeMode="contain"
             style={{
               width: 30,
@@ -44,6 +46,8 @@ export default function Profile({ navigation }) {
 
         <TouchableOpacity style={styles.btnAcc}>
           <Image
+            tintColor={COLORS.white}
+
             source={icons.setting}
             resizeMode="contain"
             style={{
@@ -57,6 +61,7 @@ export default function Profile({ navigation }) {
         <TouchableOpacity style={styles.btnAcc}>
           <Image
             source={icons.help}
+            tintColor={COLORS.white}
             resizeMode="contain"
             style={{
               width: 30,
@@ -92,15 +97,17 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     fontSize: 18,
+    color: COLORS.white,
   },
   textStyle2: {
-    fontSize: 18,
+    fontSize: 22,
+    color: COLORS.secondary,
     fontWeight: 'bold',
     marginBottom: SIZES.height * 0.05,
   },
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: COLORS.primary,
   },
   btnAcc: {
     flexDirection: 'row',

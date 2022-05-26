@@ -8,6 +8,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  TextInput,
   FlatList,
 } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
@@ -141,7 +142,16 @@ export default function CustomerReq({ navigation, route }) {
                 return (
                   <View style={styles.rowFlex2} key={index}>
                     <ItemDetais msg={item.name} />
-                    <ItemDetais msg={item.color} />
+                    <TextInput
+                      style={[styles.inputStyle]}
+                      placeholder="color code"
+                      placeholderTextColor={COLORS.third}
+                      autoCapitalize="none"
+                      keyboardType="email-address"
+                      returnKeyType="next"
+                      underlineColorAndroid="#f000"
+                      blurOnSubmit={false}
+                    />
                   </View>
                 );
               })

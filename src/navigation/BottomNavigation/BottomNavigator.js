@@ -10,9 +10,9 @@ import { isIphoneX } from 'react-native-iphone-x-helper';
 import { useSelector } from 'react-redux';
 
 import Home from '../../screens/Home';
-import ItemsScreen from '../../screens/MyBag';
+import ItemsScreen from '../../screens/HomeDetails';
 import Profile from '../../screens/Profile';
-import Location from '../../screens/Location';
+import Location from '../../screens/House3D';
 import Estimate from '../../screens/Estimate';
 
 import { COLORS, icons } from '../../constants';
@@ -72,7 +72,7 @@ const Tabs = () => {
                   {cartItems.length}
                 </Text>
               </View>
-              <TabBarIcon focused={focused} iconSource={icons.help} />
+              <TabBarIcon focused={focused} iconSource={icons.task} />
             </View>
           ),
           tabBarButton: props => <TabBarCustomButton {...props} />,
@@ -83,7 +83,7 @@ const Tabs = () => {
         component={Location}
         options={{
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} iconSource={icons.help} />
+            <TabBarIcon focused={focused} iconSource={icons.house} />
           ),
           tabBarButton: props => <TabBarCustomButton {...props} />,
         }}
@@ -93,7 +93,7 @@ const Tabs = () => {
         component={Estimate}
         options={{
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} iconSource={icons.help} />
+            <TabBarIcon focused={focused} iconSource={icons.estimate} />
           ),
           tabBarButton: props => <TabBarCustomButton {...props} />,
         }}

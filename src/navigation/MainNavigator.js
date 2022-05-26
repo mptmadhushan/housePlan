@@ -9,7 +9,7 @@ import BottomNavigator from './BottomNavigation/BottomNavigator';
 import RowMaterial from '../screens/RowMaterial';
 import CustomerReq from '../screens/CustomerReq';
 import Estimate from '../screens/Estimate';
-import Location from '../screens/Location';
+import Location from '../screens/House3D';
 import ItemDetails from '../screens/ItemDetails';
 import ContactUs from '../screens/ContactUs';
 import ScanFail from '../screens/ScanFail';
@@ -21,6 +21,7 @@ import ShoppingCartIcon from '../components/ShoppingCartIcon';
 export const ScreenNames = {
   Estimate: 'Estimate',
   Contact: 'Contact',
+  HomeDetails: 'HomeDetails',
   Login: 'Login',
   OnBoarding: 'OnBoarding',
   Register: 'Register',
@@ -49,10 +50,6 @@ export default function MainStackNavigator() {
       screenOptions={{
         headerShown: false,
       }}>
-      {/* {!userAuthToken || userAuthToken === '' ? (
-        <Screen name={ScreenNames.OnBoarding} component={LoginScreen} />
-      ) : ( */}
-      {/* <> */}
       <Screen name={ScreenNames.Login} component={LoginScreen} />
 
       <Screen
@@ -123,8 +120,6 @@ export default function MainStackNavigator() {
           headerShown: false,
         }}
       />
-      {/* </> */}
-      {/* )} */}
     </Navigator>
   );
 }

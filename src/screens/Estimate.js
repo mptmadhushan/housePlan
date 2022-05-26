@@ -78,9 +78,11 @@ export default function Home({ navigation }) {
       </View>
       <View style={styles.centerFlex}>
         <Image
-          source={{ uri: 'https://picsum.photos/200/300' }}
+          source={images.cover}
           style={{
             marginTop: 10,
+            borderRadius: 20,
+            marginBottom: 20,
             width: SIZES.width * 0.8,
             height: SIZES.width * 0.36,
           }}
@@ -294,22 +296,21 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: COLORS.primary,
   },
   buttonTextStyleReg: {
-    color: COLORS.third,
-    fontSize: 20,
-    paddingVertical: 7,
+    color: COLORS.secondary,
+    fontSize: 22,
+    paddingVertical: 10,
     fontWeight: 'bold',
   },
   buttonTextStyle: {
     color: COLORS.white,
     fontSize: 20,
-    paddingVertical: 7,
     fontWeight: 'bold',
   },
   TextStyleRg: {
-    color: COLORS.third,
+    color: COLORS.white,
     fontSize: 15,
     width: SIZES.width * 0.3,
     paddingVertical: 7,
@@ -320,9 +321,10 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.black,
     borderWidth: 0,
     color: COLORS.white,
+    justifyContent: 'center',
+    alignItems: 'center',
     height: 50,
     width: 330,
-    alignItems: 'center',
     borderRadius: 30,
     marginLeft: 35,
     marginRight: 35,
@@ -338,18 +340,18 @@ const styles = StyleSheet.create({
     paddingRight: 15,
     borderColor: COLORS.darkgray,
     borderWidth: 1,
-    borderRadius: 30,
+    borderRadius: 10,
     marginHorizontal: 20,
     margin: 5,
   },
   inputStyle2: {
     flex: 1,
-    width: SIZES.width * 0.2,
+    width: SIZES.width * 0.14,
     color: COLORS.third,
     borderColor: COLORS.darkgray,
     borderWidth: 1,
-    borderRadius: 30,
-    marginHorizontal: 2,
+    borderRadius: 10,
+    marginHorizontal: 10,
     margin: 5,
   },
 });

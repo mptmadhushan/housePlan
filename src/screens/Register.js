@@ -68,7 +68,7 @@ const LoginScreen = ({ navigation }) => {
 
   const onPressLogin = () => {
     dispatch(authSuccess('data.token'));
-    navigation.navigate('Home');
+    navigation.navigate('OnBoarding');
     // const payload = {
     //   username: userEmail,
     //   password: userPassword,
@@ -238,7 +238,7 @@ const LoginScreen = ({ navigation }) => {
         style={styles.buttonStyle}
         activeOpacity={0.5}
         onPress={() => onPressLogin()}>
-        <Text style={styles.buttonTextStyle}>Login</Text>
+        <Text style={styles.buttonTextStyle}>Register</Text>
       </TouchableOpacity>
     </View>
   );
@@ -265,7 +265,7 @@ const LoginScreen = ({ navigation }) => {
                 transform: [{ scale: animationLogoScale }],
               }}>
               <Image
-                source={images.silicaLogo}
+                source={images.logo}
                 resizeMode="contain"
                 style={{
                   width: SIZES.width * 0.56,
