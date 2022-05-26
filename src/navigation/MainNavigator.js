@@ -11,10 +11,11 @@ import CustomerReq from '../screens/CustomerReq';
 import Estimate from '../screens/Estimate';
 import Location from '../screens/House3D';
 import ItemDetails from '../screens/ItemDetails';
-import ContactUs from '../screens/ContactUs';
+import ContactUs from '../screens/Contact';
 import ScanFail from '../screens/ScanFail';
 import MyItems from '../screens/MyItems';
 import MyDetails from '../screens/MyDetails';
+import HomeDetails from '../screens/HomeDetails';
 import Contact from '../screens/Contact';
 import ShoppingCartIcon from '../components/ShoppingCartIcon';
 
@@ -51,7 +52,6 @@ export default function MainStackNavigator() {
         headerShown: false,
       }}>
       <Screen name={ScreenNames.Login} component={LoginScreen} />
-
       <Screen
         name={ScreenNames.Home}
         component={BottomNavigator}
@@ -60,6 +60,11 @@ export default function MainStackNavigator() {
       <Screen
         name={ScreenNames.OnBoarding}
         component={OnBoarding}
+        options={{ headerShown: false }}
+      />
+      <Screen
+        name={ScreenNames.HomeDetails}
+        component={HomeDetails}
         options={{ headerShown: false }}
       />
       <Screen

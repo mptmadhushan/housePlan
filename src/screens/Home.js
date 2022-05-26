@@ -57,7 +57,7 @@ export default function Home({ navigation }) {
       <TouchableOpacity
         style={styles.buttonStyle}
         activeOpacity={0.5}
-        onPress={() => navigation.navigate('Register')}>
+        onPress={() => navigation.navigate('HomeDetails')}>
         <Text style={styles.buttonTextStyle}>Submit your detail</Text>
       </TouchableOpacity>
     </View>
@@ -111,7 +111,6 @@ export default function Home({ navigation }) {
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
           <TextInput
@@ -122,7 +121,6 @@ export default function Home({ navigation }) {
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
         </View>
@@ -135,7 +133,6 @@ export default function Home({ navigation }) {
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
           <TextInput
@@ -146,7 +143,6 @@ export default function Home({ navigation }) {
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
         </View>
@@ -159,7 +155,6 @@ export default function Home({ navigation }) {
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
           <TextInput
@@ -170,7 +165,6 @@ export default function Home({ navigation }) {
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
         </View>

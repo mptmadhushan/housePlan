@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import Toast from 'react-native-simple-toast';
 
@@ -61,7 +61,16 @@ function HomeDetails({ navigation }) {
 
   const removeItemFromCart = item =>
     dispatch(removeItemFromCartActionCreator(item));
-
+  const ButtonSub = (
+    <View style={styles.centerFlex}>
+      <TouchableOpacity
+        style={styles.buttonStyle}
+        activeOpacity={0.5}
+        onPress={() => navigation.navigate('Home')}>
+        <Text style={styles.buttonTextStyle}>Edit</Text>
+      </TouchableOpacity>
+    </View>
+  );
   return (
     <View style={styles.container}>
       <View style={styles.rowFlex1}>
@@ -94,6 +103,7 @@ function HomeDetails({ navigation }) {
         <ItemDetais msg={'Roof Type :  Hip Roof'} />
         <ItemDetais msg={'Finishing Roof Type :  Hip Roof'} />
       </View>
+      {ButtonSub}
     </View>
   );
 }

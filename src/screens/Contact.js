@@ -205,10 +205,10 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: COLORS.primary,
   },
   buttonTextStyleReg: {
-    color: COLORS.third,
+    color: COLORS.secondary,
     fontSize: 20,
     paddingVertical: 7,
     fontWeight: 'bold',
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   TextStyleRg: {
-    color: COLORS.third,
+    color: COLORS.white,
     fontSize: 15,
     width: SIZES.width * 0.4,
     paddingVertical: 7,

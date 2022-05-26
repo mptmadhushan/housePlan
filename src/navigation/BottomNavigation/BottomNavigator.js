@@ -49,7 +49,7 @@ const Tabs = () => {
           tabBarButton: props => <TabBarCustomButton {...props} />,
         }}
       />
-      <Screen
+      {/* <Screen
         name={ScreenNames.ItemsScreen}
         component={ItemsScreen}
         options={{
@@ -77,7 +77,7 @@ const Tabs = () => {
           ),
           tabBarButton: props => <TabBarCustomButton {...props} />,
         }}
-      />
+      /> */}
       <Screen
         name={ScreenNames.Location}
         component={Location}

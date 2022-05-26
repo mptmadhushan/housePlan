@@ -126,7 +126,10 @@ export default function RowMaterial({ navigation, route }) {
         </View>
 
         <View style={styles.centerFlex}>
-          <TouchableOpacity style={styles.buttonStyle} activeOpacity={0.5}>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            activeOpacity={0.5}
+            onPress={() => navigation.navigate('ContactUs')}>
             <Text style={styles.buttonTextStyle}>View Contacts</Text>
           </TouchableOpacity>
           <TouchableOpacity
